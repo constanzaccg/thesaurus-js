@@ -1,0 +1,15 @@
+{
+    "name": "thesaurus",
+    "version": "1.0.0",
+    "description": "A thesaurus for Nodejs",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Constanza Casquet",
+    "license": "MIT",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.10",
+        "got": "^11.4.0"
+    }
+}
