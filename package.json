@@ -1,8 +1,9 @@
 {
-    "name": "thesaurus",
-    "version": "1.0.0",
+    "name": "thesaurus-js",
+    "version": "1.0.1",
     "description": "A thesaurus for Nodejs",
-    "main": "index.js",
+    "main": "src/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -10,6 +11,23 @@
     "license": "MIT",
     "dependencies": {
         "cheerio": "^1.0.0-rc.10",
-        "got": "^11.4.0"
+        "got": "^11.8.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/constanzaccg/thesaurus-js.git"
+    },
+    "keywords": [
+        "thesaurus",
+        "thesaurus-js",
+        "synonyms",
+        "dictionaries"
+    ],
+    "bugs": {
+        "url": "https://github.com/constanzaccg/thesaurus-js/issues"
+    },
+    "homepage": "https://github.com/constanzaccg/thesaurus-js#readme",
+    "devDependencies": {
+        "typescript": "^4.6.2"
     }
 }

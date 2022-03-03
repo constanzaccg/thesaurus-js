@@ -1,4 +1,4 @@
-Thesaurus is a multi-language library for Node.js that search for synonyms from different online dictionaries.
+Thesaurus is a multi-language library for Node.js that look up synonyms from different online dictionaries.
 These are the currently available dictionaries and languages.
 
 -   [Thesaurus.com](https://www.thesaurus.com/) <img height="20px" src="https://img.shields.io/badge/EN-flag.svg?color=555555&style=flat&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNjAgMzAiIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYwMCI+CjxjbGlwUGF0aCBpZD0icyI+Cgk8cGF0aCBkPSJNMCwwIHYzMCBoNjAgdi0zMCB6Ii8+CjwvY2xpcFBhdGg+CjxjbGlwUGF0aCBpZD0idCI+Cgk8cGF0aCBkPSJNMzAsMTUgaDMwIHYxNSB6IHYxNSBoLTMwIHogaC0zMCB2LTE1IHogdi0xNSBoMzAgeiIvPgo8L2NsaXBQYXRoPgo8ZyBjbGlwLXBhdGg9InVybCgjcykiPgoJPHBhdGggZD0iTTAsMCB2MzAgaDYwIHYtMzAgeiIgZmlsbD0iIzAxMjE2OSIvPgoJPHBhdGggZD0iTTAsMCBMNjAsMzAgTTYwLDAgTDAsMzAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI2Ii8+Cgk8cGF0aCBkPSJNMCwwIEw2MCwzMCBNNjAsMCBMMCwzMCIgY2xpcC1wYXRoPSJ1cmwoI3QpIiBzdHJva2U9IiNDODEwMkUiIHN0cm9rZS13aWR0aD0iNCIvPgoJPHBhdGggZD0iTTMwLDAgdjMwIE0wLDE1IGg2MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEwIi8+Cgk8cGF0aCBkPSJNMzAsMCB2MzAgTTAsMTUgaDYwIiBzdHJva2U9IiNDODEwMkUiIHN0cm9rZS13aWR0aD0iNiIvPgo8L2c+Cjwvc3ZnPgo=">
@@ -11,15 +11,23 @@ These are the currently available dictionaries and languages.
 
 ```bash
 
-npm install thesaurus
+npm install thesaurus-js
 
 ```
 
 ## Usage
 
-```javascript
-const { thesaurus } = require('thesaurus');
+### Parameters
 
-// thesaurus(word, languageCode, dictionary);
-thesaurus('house', 'en', 'reverso');
+-   word: main word to look up synonyms
+-   language: language code to search for ('fr', 'pt', etc.) if none is present, the default value is 'en'.
+-   dictionary: dictionary to search for (currently available: 'thesaurus', 'wordreference' and 'reverso'), if none is present it will default to 'multi' and search all dictionaries.
+
+### Example
+
+```javascript
+const { thesaurus } = require('thesaurus-js');
+
+await thesaurus('house', 'en', 'reverso');
+// => [ word: 'house', language: 'en', dictionary: 'reverso', synonyms: [ 'home', 'residence', ... ] ]
 ```
