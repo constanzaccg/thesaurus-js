@@ -1,9 +1,9 @@
 'use strict';
 
-const cheerio = require('cheerio');
-const axios = require('axios');
+import cheerio from 'cheerio';
+import ky from 'ky';
 
-const thesauruses = require('./thesauruses.json');
+import { thesauruses } from './thesauruses.js';
 
 const filterSynonyms = async (html, selectedDictionary) => {
     try {
@@ -35,7 +35,7 @@ const filterSynonyms = async (html, selectedDictionary) => {
     }
 };
 
-const thesaurus = async (
+export const thesaurus = async (
     word,
     language = 'en',
     dictionary = 'multi',
@@ -52,12 +52,17 @@ const thesaurus = async (
             let results = [];
 
             for (const selectedDictionary of selectedDictionaries) {
-                const response = await axios.get(
+                const response = await ky.get(
                     `${selectedDictionary.url}${word}`,
                 );
 
                 if (response.status === 200) {
-                    const html = response.data;
+                    const { value } = await response.body
+                        .getReader()
+                        .read();
+                    const html = new TextDecoder('utf-8').decode(
+                        value,
+                    );
 
                     const synonyms = await filterSynonyms(
                         html,
@@ -84,5 +89,3 @@ const thesaurus = async (
         return error;
     }
 };
-
-exports.thesaurus = thesaurus;

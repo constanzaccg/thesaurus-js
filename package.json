@@ -1,8 +1,9 @@
 {
     "name": "thesaurus-js",
     "version": "1.0.2",
-    "description": "A thesaurus for Nodejs",
+    "description": "A thesaurus for client-side frontends",
     "main": "src/index.js",
+    "type": "module",
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +11,9 @@
     "author": "Constanza Casquet",
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.26.0",
-        "cheerio": "^1.0.0-rc.10"
+        "cheerio": "^1.0.0-rc.10",
+        "ky": "^0.30.0",
+        "web-streams-polyfill": "^3.2.0"
     },
     "repository": {
         "type": "git",
