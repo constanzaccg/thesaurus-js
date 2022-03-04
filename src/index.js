@@ -1,7 +1,7 @@
 'use strict';
 
 const cheerio = require('cheerio');
-const got = require('got');
+const axios = require('axios');
 
 const thesauruses = require('./thesauruses.json');
 
@@ -52,14 +52,12 @@ const thesaurus = async (
             let results = [];
 
             for (const selectedDictionary of selectedDictionaries) {
-                const response = await got(
+                const response = await axios.get(
                     `${selectedDictionary.url}${word}`,
-                ).catch(() => {
-                    throw new Error('No word was found');
-                });
+                );
 
-                if (response.statusCode === 200) {
-                    const html = response.body;
+                if (response.status === 200) {
+                    const html = response.data;
 
                     const synonyms = await filterSynonyms(
                         html,

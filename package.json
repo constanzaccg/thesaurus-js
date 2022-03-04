@@ -1,6 +1,6 @@
 {
     "name": "thesaurus-js",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A thesaurus for Nodejs",
     "main": "src/index.js",
     "types": "dist/index.d.ts",
@@ -10,8 +10,8 @@
     "author": "Constanza Casquet",
     "license": "MIT",
     "dependencies": {
-        "cheerio": "^1.0.0-rc.10",
-        "got": "^11.8.3"
+        "axios": "^0.26.0",
+        "cheerio": "^1.0.0-rc.10"
     },
     "repository": {
         "type": "git",
