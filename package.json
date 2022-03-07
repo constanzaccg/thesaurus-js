@@ -1,6 +1,6 @@
 {
     "name": "thesaurus-js",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A thesaurus for client-side frontends",
     "main": "src/index.js",
     "type": "module",
