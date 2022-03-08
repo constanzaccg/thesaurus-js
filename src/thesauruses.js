@@ -3,7 +3,7 @@ export const thesauruses = [
         language: 'es',
         dictionary: 'wordreference',
         url: 'https://www.wordreference.com/sinonimos/',
-        htmlSections: ['#otherDicts div.trans:first'],
+        htmlSections: ['#otherDicts div:first-of-type li'],
         splitText: ',  ',
     },
     {

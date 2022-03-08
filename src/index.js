@@ -1,7 +1,7 @@
 'use strict';
 
 import cheerio from 'cheerio';
-import ky from 'ky';
+import axios from 'axios';
 
 import { thesauruses } from './thesauruses.js';
 
@@ -38,31 +38,26 @@ const filterSynonyms = async (html, selectedDictionary) => {
 export const thesaurus = async (
     word,
     language = 'en',
-    dictionary = 'multi',
+    dictionaries = ['multi'],
 ) => {
     try {
         const selectedDictionaries = thesauruses.filter(
             (thesaurus) =>
                 thesaurus.language === language &&
-                (thesaurus.dictionary === dictionary ||
-                    dictionary === 'multi'),
+                (dictionaries.includes(thesaurus.dictionary) ||
+                    dictionaries.includes('multi')),
         );
 
         if (selectedDictionaries && selectedDictionaries.length > 0) {
             let results = [];
 
             for (const selectedDictionary of selectedDictionaries) {
-                const response = await ky.get(
+                const response = await axios.get(
                     `${selectedDictionary.url}${word}`,
                 );
 
                 if (response.status === 200) {
-                    const { value } = await response.body
-                        .getReader()
-                        .read();
-                    const html = new TextDecoder('utf-8').decode(
-                        value,
-                    );
+                    const html = response.data;
 
                     const synonyms = await filterSynonyms(
                         html,
@@ -86,6 +81,6 @@ export const thesaurus = async (
             throw new Error('No dictionary was found');
         }
     } catch (error) {
-        return error;
+        return null;
     }
 };

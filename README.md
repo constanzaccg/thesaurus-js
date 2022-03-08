@@ -21,13 +21,13 @@ npm install thesaurus-js
 
 -   word: main word to look up synonyms
 -   language: language code to search for ('fr', 'pt', etc.) if none is present, the default value is 'en'.
--   dictionary: dictionary to search for (currently available: 'thesaurus', 'wordreference' and 'reverso'), if none is present it will default to 'multi' and search all dictionaries.
+-   dictionaries: dictionaries to search for (currently available: 'thesaurus', 'wordreference' and 'reverso'), if none is present it will default to 'multi' and search all dictionaries.
 
 ### Example
 
 ```javascript
 import { thesaurus } from 'thesaurus-js';
 
-await thesaurus('house', 'en', 'reverso');
+await thesaurus('house', 'en', ['reverso', 'wordreference']);
 // => [ word: 'house', language: 'en', dictionary: 'reverso', synonyms: [ 'home', 'residence', ... ] ]
 ```

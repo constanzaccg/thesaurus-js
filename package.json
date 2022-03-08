@@ -1,6 +1,6 @@
 {
     "name": "thesaurus-js",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A thesaurus for client-side frontends",
     "main": "src/index.js",
     "type": "module",
@@ -12,8 +12,7 @@
     "license": "MIT",
     "dependencies": {
         "cheerio": "^1.0.0-rc.10",
-        "ky": "^0.30.0",
-        "web-streams-polyfill": "^3.2.0"
+        "axios": "^0.26.0"
     },
     "repository": {
         "type": "git",
