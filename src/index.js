@@ -54,6 +54,11 @@ export const thesaurus = async (
             for (const selectedDictionary of selectedDictionaries) {
                 const response = await axios.get(
                     `${selectedDictionary.url}${word}`,
+                    {
+                        validateStatus: () => {
+                            return true;
+                        },
+                    },
                 );
 
                 if (response.status === 200) {

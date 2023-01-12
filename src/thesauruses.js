@@ -21,7 +21,7 @@ export const thesauruses = [
     {
         language: 'es',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/es/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/es/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
@@ -30,7 +30,7 @@ export const thesauruses = [
     {
         language: 'en',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/en/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/en/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
@@ -39,7 +39,7 @@ export const thesauruses = [
     {
         language: 'fr',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/fr/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/fr/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
@@ -48,7 +48,7 @@ export const thesauruses = [
     {
         language: 'pt',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/pt/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/pt/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
@@ -57,7 +57,7 @@ export const thesauruses = [
     {
         language: 'it',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/it/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/it/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
@@ -66,7 +66,7 @@ export const thesauruses = [
     {
         language: 'de',
         dictionary: 'reverso',
-        url: 'https://cors-proxy-ccg.herokuapp.com/https://synonyms.reverso.net/sinonimo/de/',
+        url: 'https://prs-ccg.ew.r.appspot.com/https://synonyms.reverso.net/sinonimo/de/',
         htmlSections: [
             'div.word-opt li a',
             'div.extended-suggestions a',
